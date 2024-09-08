@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Covered Call Simulator</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <h1>Covered Call Strategy Simulator</h1>
+    <form action="/simulate" method="POST">
+      <label for="stock_price">Stock Price($):</label>
+      <input
+        type="text"
+        id="stock_price"
+        name="stock_price"
+        required
+      /><br /><br />
+
+      <label for="strike_price">Strike Price($):</label>
+      <input
+        type="text"
+        id="strike_price"
+        name="strike_price"
+        required
+      /><br /><br />
+
+      <label for="premium">Option Premium (per share in $):</label>
+      <input type="text" id="premium" name="premium" required /><br /><br />
+
+      <label for="shares">Number of Shares:</label>
+      <input type="text" id="shares" name="shares" value="100" /><br /><br />
+
+      <label for="expiration">Expiration Date:</label>
+      <input type="date" id="expiration" name="expiration" /><br /><br />
+
+      <button type="submit">Simulate</button>
+    </form>
+  </body>
+</html>
